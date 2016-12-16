@@ -55,7 +55,7 @@ public class Player : MonoBehaviour {
         switch (state)
         {
             case PlayerState.NORMAL:
-                rigid.velocity = directionNormalized * speed * Time.deltaTime;
+                rigid.MovePosition(this.transform.position + directionNormalized * speed * Time.deltaTime);
 
                 if (Input.GetButtonDown("Jump") && dashCooldownTimer > dashCooldown)
                 {
@@ -64,7 +64,7 @@ public class Player : MonoBehaviour {
                 break;
 
             case PlayerState.DASH:
-                rigid.velocity = lastDirectionNormalized * dashSpeed * Time.deltaTime;
+                rigid.MovePosition(this.transform.position + lastDirectionNormalized * dashSpeed * Time.deltaTime);
 
                 dashTimer += Time.deltaTime;
                 if (dashTimer > dashLength)

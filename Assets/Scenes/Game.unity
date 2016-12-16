@@ -740,8 +740,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  speed: 60
-  dashSpeed: 130
+  speed: 6
+  dashSpeed: 13
   dashLength: 0.18
   dashCooldown: 0.5
 --- !u!58 &1982174336
