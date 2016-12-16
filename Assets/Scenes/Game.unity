@@ -100,6 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 35528754}
   - component: {fileID: 35528753}
+  - component: {fileID: 35528755}
   m_Layer: 0
   m_Name: edge_w
   m_TagString: Untagged
@@ -155,6 +156,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &35528755
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 35528752}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.0000001, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &214612182
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 214612184}
   - component: {fileID: 214612183}
+  - component: {fileID: 214612185}
   m_Layer: 0
   m_Name: edge_e
   m_TagString: Untagged
@@ -219,6 +233,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &214612185
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 214612182}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.0000001, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &272112248
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,6 +254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 272112250}
   - component: {fileID: 272112249}
+  - component: {fileID: 272112251}
   m_Layer: 0
   m_Name: edge_s
   m_TagString: Untagged
@@ -283,6 +310,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &272112251
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 272112248}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &679726409
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,6 +564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1637520867}
   - component: {fileID: 1637520866}
+  - component: {fileID: 1637520868}
   m_Layer: 0
   m_Name: edge_n
   m_TagString: Untagged
@@ -580,6 +620,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1637520868
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1637520865}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1789016173
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,8 +740,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  speed: 6
-  dashSpeed: 13
+  speed: 60
+  dashSpeed: 130
   dashLength: 0.18
   dashCooldown: 0.5
 --- !u!58 &1982174336

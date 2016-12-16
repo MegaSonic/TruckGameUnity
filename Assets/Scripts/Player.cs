@@ -17,13 +17,21 @@ public class Player : MonoBehaviour {
     public float dashLength;
     public float dashCooldown;
 
+    #region Privates
     private Vector3 lastDirection;
     private float dashTimer = 0f;
     private float dashCooldownTimer = 0f;
+    private Rigidbody2D rigid;
 
+    #endregion
 
-	// Use this for initialization
-	void Start () {
+    private void Awake()
+    {
+        rigid = GetComponent<Rigidbody2D>();
+    }
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -47,7 +55,7 @@ public class Player : MonoBehaviour {
         switch (state)
         {
             case PlayerState.NORMAL:
-                this.transform.position += directionNormalized * speed * Time.deltaTime;
+                rigid.velocity = directionNormalized * speed * Time.deltaTime;
 
                 if (Input.GetButtonDown("Jump") && dashCooldownTimer > dashCooldown)
                 {
@@ -56,7 +64,7 @@ public class Player : MonoBehaviour {
                 break;
 
             case PlayerState.DASH:
-                this.transform.position += lastDirectionNormalized * dashSpeed * Time.deltaTime;
+                rigid.velocity = lastDirectionNormalized * dashSpeed * Time.deltaTime;
 
                 dashTimer += Time.deltaTime;
                 if (dashTimer > dashLength)
