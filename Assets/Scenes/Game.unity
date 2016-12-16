@@ -653,6 +653,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1982174334}
   - component: {fileID: 1982174335}
+  - component: {fileID: 1982174338}
+  - component: {fileID: 1982174336}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -688,4 +690,39 @@ MonoBehaviour:
   state: 0
   speed: 6
   dashSpeed: 13
-  dashTime: 0.18
+  dashLength: 0.18
+  dashCooldown: 0.5
+--- !u!58 &1982174336
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1982174333}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.09
+--- !u!50 &1982174338
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1982174333}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

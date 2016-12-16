@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Prime31;
 
 public enum PlayerState
 {
@@ -13,11 +14,13 @@ public class Player : MonoBehaviour {
     public PlayerState state;
     public float speed;
     public float dashSpeed;
-    public float dashTime;
-
+    public float dashLength;
+    public float dashCooldown;
 
     private Vector3 lastDirection;
     private float dashTimer = 0f;
+    private float dashCooldownTimer = 0f;
+
 
 	// Use this for initialization
 	void Start () {
@@ -39,12 +42,14 @@ public class Player : MonoBehaviour {
         float angle = Mathf.Atan2(lastDirection.y, lastDirection.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
+        dashCooldownTimer += Time.deltaTime;
+
         switch (state)
         {
             case PlayerState.NORMAL:
                 this.transform.position += directionNormalized * speed * Time.deltaTime;
 
-                if (Input.GetButtonDown("Jump"))
+                if (Input.GetButtonDown("Jump") && dashCooldownTimer > dashCooldown)
                 {
                     state = PlayerState.DASH;
                 }
@@ -54,10 +59,11 @@ public class Player : MonoBehaviour {
                 this.transform.position += lastDirectionNormalized * dashSpeed * Time.deltaTime;
 
                 dashTimer += Time.deltaTime;
-                if (dashTimer > dashTime)
+                if (dashTimer > dashLength)
                 {
                     dashTimer = 0.0f;
                     state = PlayerState.NORMAL;
+                    dashCooldownTimer = 0.0f;
 
                 }
                 break;
