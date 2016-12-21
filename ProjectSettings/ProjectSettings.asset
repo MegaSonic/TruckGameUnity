@@ -461,9 +461,9 @@ PlayerSettings:
   vrEditorSettings: {}
   cloudServicesEnabled:
     Build: 1
-    Collab: 1
+    Collab: 0
     UNet: 1
   cloudProjectId: e42e9875-0b50-4897-be43-442219e64986
   projectName: TruckAmuck
-  organizationId: mega-sonic
+  organizationId: truck-amuck
   cloudEnabled: 0
