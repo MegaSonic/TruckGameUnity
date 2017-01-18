@@ -26,7 +26,7 @@ public class Player : MonoBehaviour {
 
     #endregion
 
-    private void Awake()
+    void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
         _controller = GetComponent<CharacterController2D>();
